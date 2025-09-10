@@ -1,0 +1,668 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #121212;
+    color: white;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    transform: scale(1.25);
+}
+
+.navigation {
+    flex: 1;
+    margin: 0 40px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    justify-content: center;
+}
+
+.nav-link {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.theme-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Section with Carousel */
+.hero {
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.slide-composite {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.slide-overlay-chart {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.9) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-overlay-chart::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 60%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><polyline points="10,150 50,100 100,120 150,80 200,90 250,60 300,85 350,70 390,95" stroke="%234CAF50" stroke-width="3" fill="none"/><polyline points="10,140 50,130 100,110 150,100 200,120 250,90 300,105 350,100 390,115" stroke="%23ff9800" stroke-width="3" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.8;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: #ffd700;
+    transform: scale(1.2);
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Dashboard Styles */
+.dashboard {
+    padding: 30px 0;
+}
+
+.dashboard-layout {
+    display: flex;
+    gap: 30px;
+}
+
+.left-content {
+    flex: 1;
+}
+
+.right-sidebar {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 0px;
+}
+
+/* OPTIMUS Section */
+.optimus-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 5px;
+}
+
+.optimus-logo h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.optimus-logo p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.search-section {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-size: 14px;
+}
+
+.search-input::placeholder {
+    color: #ccc;
+}
+
+.search-btn {
+    background: #ffd700;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.search-btn:hover {
+    background: #ffed4e;
+}
+
+/* Treemap Sections */
+.treemap-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.treemap-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.treemap-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(40px, auto);
+    gap: 5px;
+}
+
+.treemap-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.treemap-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+    font-size: 16px;
+}
+
+.treemap-item.medium {
+    grid-row: span 1;
+    font-size: 14px;
+}
+
+.treemap-item.small {
+    font-size: 11px;
+}
+
+.treemap-item.positive {
+    background: #4CAF50;
+    color: white;
+}
+
+.treemap-item.negative {
+    background: #f44336;
+    color: white;
+}
+
+.treemap-name {
+    margin-bottom: 5px;
+}
+
+.treemap-change {
+    opacity: 0.9;
+}
+
+.cultivos-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.cultivos-grid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cultivo-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 80px;
+}
+
+.cultivo-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.cultivo-btn.active {
+    background: #ffd700;
+    color: #000;
+    border-color: #ffd700;
+}
+
+.cultivo-icon {
+    font-size: 24px;
+}
+
+.cultivo-name {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Período Section */
+.periodo-section {
+    margin-bottom: 30px;
+}
+
+.periodo-title {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.periodo-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.periodo-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.periodo-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.periodo-btn.active {
+    background: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.periodo-btn.currency {
+    background: rgba(33, 150, 243, 0.8);
+    border-color: #2196F3;
+}
+
+/* Filters */
+.filters-section {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.filter-select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    min-width: 200px;
+}
+
+.filter-select option {
+    background: #1a1a2e;
+    color: white;
+}
+
+/* Data Status */
+.data-status {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.status-badge {
+    background: #4CAF50;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-info {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.update-btn {
+    background: #2196F3;
+    color: white;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: auto;
+    min-width: 150px;
+}
+
+.update-btn:hover {
+    background: #1976D2;
+}
+
+/* Market Grid */
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.market-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    position: relative;
+    border-left: 4px solid;
+    transition: transform 0.3s ease;
+}
+
+.market-card:hover {
+    transform: translateY(-5px);
+}
+
+.market-card.rosario {
+    border-left-color: #f44336;
+}
+
+.market-card.bahia {
+    border-left-color: #ff9800;
+}
+
+.market-card.quequen {
+    border-left-color: #2196F3;
+}
+
+.market-card.timbues {
+    border-left-color: #4CAF50;
+}
+
+.market-card.junin {
+    border-left-color: #f44336;
+}
+
+.market-card.gral-heras {
+    border-left-color: #ff9800;
+}
+
+.market-card.tres-sargentos {
+    border-left-color: #2196F3;
+}
+
+.market-card.zarate {
+    border-left-color: #4CAF50;
+}
+
+.market-card.rojas {
+    border-left-color: #f44336;
+}
+
+.market-card.arrecifes {
+    border-left-color: #ff9800;
+}
+
+.market-card.gral-rodriguez {
+    border-left-color: #2196F3;
+}
+
+.market-card.lima {
+    border-left-color: #4CAF50;
+}
+
+.market-card.theobald {
+    border-left-color: #f44336;
+}
+
+.market-card.la-toma {
+    border-left-color: #ff9800;
+}
+
+.market-card.arroyo-seco {
+    border-left-color: #2196F3;
+}
+
+.market-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.market-price {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.market-status {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+.market-status.neg {
+    color: #f44336;
+}
+
+.market-status.work {
+    color: #ff9800;
+}
+
+.market-status.open {
+    color: #2196F3;
+}
+
+.market-status.negotiated {
+    color: #4CAF50;
+}
+
+.market-action {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.market-action:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .cultivos-grid {
+        justify-content: center;
+    }
+    
+    .periodo-controls {
+        justify-content: center;
+    }
+    
+    .filters-section {
+        flex-direction: column;
+    }
+    
+    .data-status {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .market-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .granos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .granos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-menu {
+        font-size: 12px;
+    }
+    
+    .market-price {
+        font-size: 24px;
+    }
+}
