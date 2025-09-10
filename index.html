@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intagro Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header con navegación -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMTIwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSIxMCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5pbnRhZ3JvPC90ZXh0Pgo8L3N2Zz4K" alt="Intagro">
+            </div>
+            <nav class="navigation">
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link">INSTITUCIONAL</a></li>
+                    <li><a href="#" class="nav-link active">MERCADOS</a></li>
+                    <li><a href="#" class="nav-link">INFORMES</a></li>
+                    <li><a href="#" class="nav-link">DATOS ÚTILES</a></li>
+                    <li><a href="#" class="nav-link">CLIMA</a></li>
+                    <li><a href="#" class="nav-link">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="theme-toggle">
+                <button class="theme-btn">
+                    <span class="theme-icon">☀️</span>
+                    <span class="theme-text">Light</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <div class="slide-composite">
+                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" alt="Cosechadora trabajando al atardecer" class="slide-bg">
+                    <div class="slide-overlay-chart"></div>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <div class="slide-composite">
+                    <img src="https://images.unsplash.com/photo-1625773049545-fb23fc2d5355?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" alt="Cosechadora moderna en campo de trigo" class="slide-bg">
+                    <div class="slide-overlay-chart"></div>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <div class="slide-composite">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" alt="Cosechadora y camión en campo" class="slide-bg">
+                    <div class="slide-overlay-chart"></div>
+                </div>
+            </div>
+            <div class="carousel-slide">
+                <div class="slide-composite">
+                    <img src="https://images.unsplash.com/photo-1595351298020-038700609878?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" alt="Cosechadora con gráficos de mercado" class="slide-bg">
+                    <div class="slide-overlay-chart"></div>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard">
+        <div class="container">
+            <div class="dashboard-layout">
+                <!-- Left Content -->
+                <div class="left-content">
+                    <!-- Cultivos Selection -->
+                    <div class="cultivos-section">
+                        <h2 class="section-title">Cultivos - Seleccionado: Maíz</h2>
+                        <div class="cultivos-grid">
+                            <button class="cultivo-btn">
+                                <span class="cultivo-icon">🌾</span>
+                                <span class="cultivo-name">Trigo</span>
+                            </button>
+                            <button class="cultivo-btn active">
+                                <span class="cultivo-icon">🌽</span>
+                                <span class="cultivo-name">Maíz</span>
+                            </button>
+                            <button class="cultivo-btn">
+                                <span class="cultivo-icon">🌱</span>
+                                <span class="cultivo-name">Soja</span>
+                            </button>
+                            <button class="cultivo-btn">
+                                <span class="cultivo-icon">🌻</span>
+                                <span class="cultivo-name">Girasol</span>
+                            </button>
+                            <button class="cultivo-btn">
+                                <span class="cultivo-icon">🌾</span>
+                                <span class="cultivo-name">Sorgo</span>
+                            </button>
+                            <button class="cultivo-btn">
+                                <span class="cultivo-icon">🌾</span>
+                                <span class="cultivo-name">Cebada</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Período Selection -->
+                    <div class="periodo-section">
+                        <h3 class="periodo-title">Período</h3>
+                        <div class="periodo-controls">
+                            <button class="periodo-btn">Dispo</button>
+                            <button class="periodo-btn active">Sep</button>
+                            <button class="periodo-btn">Oct</button>
+                            <button class="periodo-btn">Nov</button>
+                            <button class="periodo-btn">Ene</button>
+                            <button class="periodo-btn">Feb</button>
+                            <button class="periodo-btn">Mzo</button>
+                            <button class="periodo-btn">Abr</button>
+                            <button class="periodo-btn">May</button>
+                            <button class="periodo-btn currency">ARS $1 ↑</button>
+                        </div>
+                    </div>
+
+                    <!-- Filters -->
+                    <div class="filters-section">
+                        <select class="filter-select">
+                            <option>Todos los destinos</option>
+                        </select>
+                        <select class="filter-select">
+                            <option>Todas las calidades</option>
+                        </select>
+                    </div>
+
+                    <!-- Data Status -->
+                    <div class="data-status">
+                        <span class="status-badge">📊 Datos actualizados</span>
+                        <span class="status-info">Cultivo: Maíz | Última actualización: 19/2025, 04:04:17</span>
+                        <button class="update-btn">Actualizar ahora</button>
+                    </div>
+
+                    <!-- Market Cards -->
+                    <div class="market-grid">
+                        <div class="market-card rosario">
+                            <h3 class="market-title">ROSARIO</h3>
+                            <div class="market-price">$ 205.000</div>
+                            <div class="market-status neg">NEG.ÚLTIMA RUEDA</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card bahia">
+                            <h3 class="market-title">BAHÍA BLANCA</h3>
+                            <div class="market-price">$ 220.000</div>
+                            <div class="market-status work">A TRABAJAR</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card quequen">
+                            <h3 class="market-title">QUEQUÉN</h3>
+                            <div class="market-price">$ 187.000</div>
+                            <div class="market-status open">ABIERTO</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card timbues">
+                            <h3 class="market-title">TIMBUES</h3>
+                            <div class="market-price">$ 145.000</div>
+                            <div class="market-status negotiated">NEGOCIADO</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card junin">
+                            <h3 class="market-title">JUNÍN</h3>
+                            <div class="market-price">$ 199.000</div>
+                            <div class="market-status neg">NEG.ÚLTIMA RUEDA</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card gral-heras">
+                            <h3 class="market-title">GRAL. LAS HERAS</h3>
+                            <div class="market-price">$ 208.724</div>
+                            <div class="market-status work">A TRABAJAR</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card tres-sargentos">
+                            <h3 class="market-title">TRES SARGENTOS</h3>
+                            <div class="market-price">$ 201.258</div>
+                            <div class="market-status open">ABIERTO</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card zarate">
+                            <h3 class="market-title">ZARATE</h3>
+                            <div class="market-price">$ 208.155</div>
+                            <div class="market-status negotiated">NEGOCIADO</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card rojas">
+                            <h3 class="market-title">ROJAS</h3>
+                            <div class="market-price">$ 199.219</div>
+                            <div class="market-status neg">NEG.ÚLTIMA RUEDA</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card arrecifes">
+                            <h3 class="market-title">ARRECIFES</h3>
+                            <div class="market-price">$ 213.714</div>
+                            <div class="market-status work">A TRABAJAR</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card gral-rodriguez">
+                            <h3 class="market-title">GRAL. RODRIGUEZ</h3>
+                            <div class="market-price">$ 197.967</div>
+                            <div class="market-status open">ABIERTO</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card lima">
+                            <h3 class="market-title">LIMA</h3>
+                            <div class="market-price">$ 200.524</div>
+                            <div class="market-status negotiated">NEGOCIADO</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card theobald">
+                            <h3 class="market-title">THEOBALD</h3>
+                            <div class="market-price">$ 206.173</div>
+                            <div class="market-status neg">NEG.ÚLTIMA RUEDA</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card la-toma">
+                            <h3 class="market-title">LA TOMA</h3>
+                            <div class="market-price">$ 212.819</div>
+                            <div class="market-status work">A TRABAJAR</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+
+                        <div class="market-card arroyo-seco">
+                            <h3 class="market-title">ARROYO SECO</h3>
+                            <div class="market-price">$ 195.505</div>
+                            <div class="market-status open">ABIERTO</div>
+                            <button class="market-action">👁️</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar with Treemaps -->
+                <div class="right-sidebar">
+                    <!-- OPTIMUS Logo and Search -->
+                    <div class="optimus-section">
+                        <div class="optimus-logo">
+                            <h2>OPTIMUS</h2>
+                            <p>Encontrá tu mejor alternativa</p>
+                        </div>
+                        <div class="search-section">
+                            <input type="text" class="search-input" placeholder="Procedencia de grano" />
+                            <button class="search-btn">→</button>
+                        </div>
+                    </div>
+
+                    <!-- Granos Negociados Treemap -->
+                    <div class="treemap-section">
+                        <h3 class="treemap-title">GRANOS NEGOCIADOS</h3>
+                        <div class="treemap-container">
+                            <div class="treemap-item large positive">
+                                <div class="treemap-name">Maíz</div>
+                                <div class="treemap-change">+ 1,3 %</div>
+                            </div>
+                            <div class="treemap-item medium positive">
+                                <div class="treemap-name">Trigo</div>
+                                <div class="treemap-change">+ 0,9 %</div>
+                            </div>
+                            <div class="treemap-item medium negative">
+                                <div class="treemap-name">Soja</div>
+                                <div class="treemap-change">- 0,2 %</div>
+                            </div>
+                            <div class="treemap-item small negative">
+                                <div class="treemap-name">Sorgo</div>
+                                <div class="treemap-change">-1,2 %</div>
+                            </div>
+                            <div class="treemap-item small positive">
+                                <div class="treemap-name">Cebada</div>
+                                <div class="treemap-change">+ 0,7 %</div>
+                            </div>
+                            <div class="treemap-item small negative">
+                                <div class="treemap-name">Girasol</div>
+                                <div class="treemap-change">-0,3 %</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Posición Negociada Treemap -->
+                    <div class="treemap-section">
+                        <h3 class="treemap-title">POSICIÓN NEGOCIADA</h3>
+                        <div class="treemap-container">
+                            <div class="treemap-item large positive">
+                                <div class="treemap-name">Agosto</div>
+                                <div class="treemap-change">+ 15 %</div>
+                            </div>
+                            <div class="treemap-item medium negative">
+                                <div class="treemap-name">Sep</div>
+                                <div class="treemap-change">-0,4 %</div>
+                            </div>
+                            <div class="treemap-item medium positive">
+                                <div class="treemap-name">Oct</div>
+                                <div class="treemap-change">+8 %</div>
+                            </div>
+                            <div class="treemap-item small positive">
+                                <div class="treemap-name">Diciembre</div>
+                                <div class="treemap-change">+ 0,3 %</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zona de Destino Treemap -->
+                    <div class="treemap-section">
+                        <h3 class="treemap-title">ZONA DE DESTINO</h3>
+                        <div class="treemap-container">
+                            <div class="treemap-item large positive">
+                                <div class="treemap-name">Rosario</div>
+                                <div class="treemap-change">+6,7 %</div>
+                            </div>
+                            <div class="treemap-item medium positive">
+                                <div class="treemap-name">BB</div>
+                                <div class="treemap-change">+1,8 %</div>
+                            </div>
+                            <div class="treemap-item medium positive">
+                                <div class="treemap-name">QQ</div>
+                                <div class="treemap-change">+1,8 %</div>
+                            </div>
+                            <div class="treemap-item small positive">
+                                <div class="treemap-name">Total</div>
+                                <div class="treemap-change">+1,8 %</div>
+                            </div>
+                            <div class="treemap-item small negative">
+                                <div class="treemap-name">TLP</div>
+                                <div class="treemap-change">-0,2 %</div>
+                            </div>
+                            <div class="treemap-item small positive">
+                                <div class="treemap-name">Rec Sur</div>
+                                <div class="treemap-change">+0,4 %</div>
+                            </div>
+                            <div class="treemap-item small negative">
+                                <div class="treemap-name">Espantillar</div>
+                                <div class="treemap-change">-0,3 %</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
